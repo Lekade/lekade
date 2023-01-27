@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+	<!-- Sprite -->
+	<svg style="display:none">
+		<symbol id="facebook" viewBox="0 0 155.139 155.139">
+			<g>
+				<path d="M89.584,155.139V84.378h23.742l3.562-27.585H89.584V39.184
+				c0-7.984,2.208-13.425,13.67-13.425l14.595-0.006V1.08C115.325,0.752,106.661,0,96.577,0C75.52,0,61.104,12.853,61.104,36.452
+				v20.341H37.29v27.585h23.814v70.761H89.584z"/>
+			</g>
+		</symbol>
+		<symbol id="twitter" viewBox="-21 -81 681.33464 681">
+			<g>
+				<path d="m200.964844 515.292969c241.050781 0 372.871094-199.703125 372.871094-372.871094 0-5.671875-.117188-11.320313-.371094-16.9375 25.585937-18.5 47.824218-41.585937 65.371094-67.863281-23.480469 10.441406-48.753907 17.460937-75.257813 20.636718 27.054687-16.230468 47.828125-41.894531 57.625-72.488281-25.320313 15.011719-53.363281 25.917969-83.214844 31.808594-23.914062-25.472656-57.964843-41.402344-95.664062-41.402344-72.367188 0-131.058594 58.6875-131.058594 131.03125 0 10.289063 1.152344 20.289063 3.398437 29.882813-108.917968-5.480469-205.503906-57.625-270.132812-136.921875-11.25 19.363281-17.742188 41.863281-17.742188 65.871093 0 45.460938 23.136719 85.605469 58.316407 109.082032-21.5-.660156-41.695313-6.5625-59.351563-16.386719-.019531.550781-.019531 1.085937-.019531 1.671875 0 63.46875 45.171875 116.460938 105.144531 128.46875-11.015625 2.996094-22.605468 4.609375-34.558594 4.609375-8.429687 0-16.648437-.828125-24.632812-2.363281 16.683594 52.070312 65.066406 89.960937 122.425781 91.023437-44.855469 35.15625-101.359375 56.097657-162.769531 56.097657-10.5625 0-21.003906-.605469-31.2617188-1.816407 57.9999998 37.175781 126.8710938 58.871094 200.8867188 58.871094"/>
+			</g>
+		</symbol>
+		<symbol id="linkedin" viewBox="0 0 512 512">
+			<g>
+				<path d="m475.074219 0h-438.148438c-20.394531 0-36.925781 16.53125-36.925781 36.925781v438.148438c0 20.394531 16.53125 36.925781 36.925781 36.925781h438.148438c20.394531 0 36.925781-16.53125 36.925781-36.925781v-438.148438c0-20.394531-16.53125-36.925781-36.925781-36.925781zm-293.464844 387h-62.347656v-187.574219h62.347656zm-31.171875-213.1875h-.40625c-20.921875 0-34.453125-14.402344-34.453125-32.402344 0-18.40625 13.945313-32.410156 35.273437-32.410156 21.328126 0 34.453126 14.003906 34.859376 32.410156 0 18-13.53125 32.402344-35.273438 32.402344zm255.984375 213.1875h-62.339844v-100.347656c0-25.21875-9.027343-42.417969-31.585937-42.417969-17.222656 0-27.480469 11.601563-31.988282 22.800781-1.648437 4.007813-2.050781 9.609375-2.050781 15.214844v104.75h-62.34375s.816407-169.976562 0-187.574219h62.34375v26.558594c8.285157-12.78125 23.109375-30.960937 56.1875-30.960937 41.019531 0 71.777344 26.808593 71.777344 84.421874zm0 0"/>		
+			</g>
+		</symbol>
+		<symbol id="instagram" viewBox="0 0 24 24">
+			<g>
+				<path d="m12.004 5.838c-3.403 0-6.158 2.758-6.158 6.158 0 3.403 2.758 6.158 6.158 6.158 3.403 0 6.158-2.758 6.158-6.158 0-3.403-2.758-6.158-6.158-6.158zm0 10.155c-2.209 0-3.997-1.789-3.997-3.997s1.789-3.997 3.997-3.997 3.997 1.789 3.997 3.997c.001 2.208-1.788 3.997-3.997 3.997z"/><path d="m16.948.076c-2.208-.103-7.677-.098-9.887 0-1.942.091-3.655.56-5.036 1.941-2.308 2.308-2.013 5.418-2.013 9.979 0 4.668-.26 7.706 2.013 9.979 2.317 2.316 5.472 2.013 9.979 2.013 4.624 0 6.22.003 7.855-.63 2.223-.863 3.901-2.85 4.065-6.419.104-2.209.098-7.677 0-9.887-.198-4.213-2.459-6.768-6.976-6.976zm3.495 20.372c-1.513 1.513-3.612 1.378-8.468 1.378-5 0-7.005.074-8.468-1.393-1.685-1.677-1.38-4.37-1.38-8.453 0-5.525-.567-9.504 4.978-9.788 1.274-.045 1.649-.06 4.856-.06l.045.03c5.329 0 9.51-.558 9.761 4.986.057 1.265.07 1.645.07 4.847-.001 4.942.093 6.959-1.394 8.453z"/>
+			</g>
+		</symbol>
+		<symbol id="vk" viewBox="0 0 24 24">
+			<g>
+				<path d="m12.145 19.5c3.472 0 2.234-2.198 2.502-2.83-.004-.472-.008-.926.008-1.202.22.062.739.325 1.811 1.367 1.655 1.67 2.078 2.665 3.415 2.665h2.461c.78 0 1.186-.323 1.389-.594.196-.262.388-.722.178-1.438-.549-1.724-3.751-4.701-3.95-5.015.03-.058.078-.135.103-.175h-.002c.632-.835 3.044-4.449 3.399-5.895.001-.002.002-.005.002-.008.192-.66.016-1.088-.166-1.33-.274-.362-.71-.545-1.299-.545h-2.461c-.824 0-1.449.415-1.765 1.172-.529 1.345-2.015 4.111-3.129 5.09-.034-1.387-.011-2.446.007-3.233.036-1.535.152-3.029-1.441-3.029h-3.868c-.998 0-1.953 1.09-.919 2.384.904 1.134.325 1.766.52 4.912-.76-.815-2.112-3.016-3.068-5.829-.268-.761-.674-1.466-1.817-1.466h-2.461c-.998 0-1.594.544-1.594 1.455 0 2.046 4.529 13.544 12.145 13.544zm-8.09-13.499c.217 0 .239 0 .4.457.979 2.883 3.175 7.149 4.779 7.149 1.205 0 1.205-1.235 1.205-1.7l-.001-3.702c-.066-1.225-.512-1.835-.805-2.205l3.508.004c.002.017-.02 4.095.01 5.083 0 1.403 1.114 2.207 2.853.447 1.835-2.071 3.104-5.167 3.155-5.293.075-.18.14-.241.376-.241h2.461.01c-.001.003-.001.006-.002.009-.225 1.05-2.446 4.396-3.189 5.435-.012.016-.023.033-.034.05-.327.534-.593 1.124.045 1.954h.001c.058.07.209.234.429.462.684.706 3.03 3.12 3.238 4.08-.138.022-.288.006-2.613.011-.495 0-.882-.74-2.359-2.23-1.328-1.292-2.19-1.82-2.975-1.82-1.524 0-1.413 1.237-1.399 2.733.005 1.622-.005 1.109.006 1.211-.089.035-.344.105-1.009.105-6.345 0-10.477-10.071-10.636-11.996.055-.005.812-.002 2.546-.003z"/>		
+			</g>
+		</symbol>
+		</svg>
+		<!-- /Sprite -->
+
+	<div class="wrapper">
+
+	<section class="menu">
+		<nav class="nav">
+			<div class="nav__link__background">
+				<a href="index.html" class="nav__link">Главная</a>
+				<a href="works.html" class="nav__link">Работы</a>
+				<a href="contact.html" class="nav__link">Контакты</a>
+			</div>
+		</nav>
+		<button class="burger" tupe="button">
+			<span class="burger__item">menu</span>
+		</button>
+	</section>
+
+
+	<header class="header">
+		<div class="header__text" >
+			<p>
+				<span>H</span>
+				<span>T</span>
+				<span>M</span>
+				<span>L</span>
+			</p>
+			<p>
+				<span>C</span>
+				<span>S</span>
+				<span>S</span>
+			</p>
+			<p class="JS__01">
+				<span>J</span>
+				<span>A</span>
+				<span>V</span>
+				<span>A</span>
+				<span>S</span>
+				<span>C</span>
+				<span>R</span>
+				<span>I</span>
+				<span>P</span>
+				<span>T</span> 
+			</p>
+			<p class="JS__02" >
+				<span>J</span>
+				<span>S</span>
+			</p>
+		</div>
+	</header>
+
+	<main>
+		<cection class="works">
+			<div class="container__works">
+				<div class="works__title__container">
+					<h1 class="works__title">Работы</h1>
+					<p class="works__title__text">Вы попали на страницу с моими работами. Здесь вы можете посмотреть мое портфолио, оценить уровень моих работ. Данная страничка находится в стадии постоянного накопления.</p>
+					<p class="works__title__text">Нужен стильный, оптимизированный сайт, в соответствии со всеми правилами юзабилити, <a href="contact.html">обращайтесь</a>.</p>
+				</div>
+
+				<div class="work">
+					<img src="imges/works/1.png" alt="1" class="work__photo">
+					<div class="work__icon__active">
+						<p class="work__text">Giraffe</p>
+					</div>
+					
+				</div>
+
+				<div class="work">
+					<img src="imges/works/2.png" alt="2" class="work__photo">
+					<div class="work__icon__active">
+						<p class="work__text">Playlists</p>
+					</div>
+				</div>
+
+				<div class="work">
+					<img src="imges/works/3.png" alt="3" class="work__photo">
+					<div class="work__icon__active">
+						<p class="work__text">Ontario</p>
+					</div>
+				</div>
+
+				<div class="work">
+					<img src="imges/works/4.png" alt="4" class="work__photo">
+					<div class="work__icon__active">
+						<p class="work__text">Button</p>
+					</div>
+				</div>
+
+				<div class="work">
+					<img src="imges/works/5.png" alt="5" class="work__photo">
+					<div class="work__icon__active">
+						<p class="work__text">Desert</p>
+					</div>
+					
+				</div>
+
+				<div class="work">
+					<img src="imges/works/6.png" alt="6" class="work__photo">
+					<div class="work__icon__active">
+						<p class="work__text">Burned</p>
+					</div>
+				</div>
+
+				<div class="work">
+					<img src="imges/works/7.png" alt="7" class="work__photo">
+					<div class="work__icon__active">
+						<p class="work__text">Have a good dey</p>
+					</div>
+				</div>
+
+				<div class="work">
+					<img src="imges/works/8.png" alt="8" class="work__photo">
+					<div class="work__icon__active">
+						<p class="work__text">Program</p>
+					</div>
+				</div>
+
+				<div class="work">
+					<img src="imges/works/9.png" alt="9" class="work__photo">
+					<div class="work__icon__active">
+						<p class="work__text">Burned 2</p>
+					</div>
+				</div>
+
+			</div>
+		</cection>
+
+	</main>
+
+	<footer class="footer">
+		<h2 class="footer__title">Свяжитесь со мной!</h2>
+
+		<div class="footer__contact">
+			<div class="footer__contact__info">
+				<p><span>Адрес:</span><span class="contact--grey"> 225710, Республика Беларусь, Брестская область, г.Пинск, ул. Молодежная, д. 62</span></p>
+				<p><span>Телефон:</span><span class="contact--grey"> +375 (25) 9839279 </span></p>
+				<p><span>Email:</span><span class="contact--grey"> kasperovich.denis@mail.ru </span></p>
+			</div>
+
+			<div class="footer__social">
+
+			<div class="social social--footer">
+						<a class="social__item" href="#" target="_blank">
+							<svg class="social__icon"	>
+								<use xlink:href="#facebook"></use>
+							</svg>
+						</a>
+
+						<a class="social__item" href="#" target="_blank">
+							<svg class="social__icon"	>
+								<use xlink:href="#twitter"></use>
+							</svg>
+						</a>
+
+						<a class="social__item" href="#" target="_blank">
+							<svg class="social__icon"	>
+								<use xlink:href="#linkedin"></use>
+							</svg>
+						</a>
+
+						<a class="social__item" href="#" target="_blank">
+							<svg class="social__icon"	>
+								<use xlink:href="#instagram"></use>
+							</svg>
+						</a>
+
+						<a class="social__item" href="#" target="_blank">
+							<svg class="social__icon"	>
+								<use xlink:href="#vk"></use>
+							</svg>
+						</a>
+
+						<a class="social__item" href="#" target="_blank">
+							<svg class="social__icon"	>
+								<use xlink:href="#facebook"></use>
+							</svg>
+						</a>
+
+			</div><!--/.social -->
+		</div><!--/.footer__social -->
+		</div><!--/.footer__contact -->
+
+		<div class="copyriht">
+			<div class="copyriht__text">
+				<span>© 2021 Денис Касперович</span> <span>|</span> <a href="#">Создание сайтов</a> 
+			</div>
+		</div>
+	</footer>
+</div><!-- /.wrapper -->
+
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/vanilla-tilt.js"></script>
+	<script>
+			VanillaTilt.init(document.querySelectorAll(".card"), {
+		max: 25,
+		speed: 400,
+		glare:true,
+		"max-glare":1,
+	});
+	</script>
+
+</body>
+
+</html>
